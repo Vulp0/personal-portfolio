@@ -1,0 +1,1 @@
+function testing(){console.log("this is a test, nothing more")}function another(){console.log("equally useless")}

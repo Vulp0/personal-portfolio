@@ -1,0 +1,23 @@
+@use "normalize.scss";
+
+//mixins start
+@mixin no-margins {
+    margin: 0;
+}
+
+//vars start
+$colorito: #3c3c3d;
+
+//classes start
+.navbar {
+    background-color: black;
+    width: 100vw;
+    height: 24px;
+    color: white;
+}
+
+.hero-container {
+    @include no-margins();
+    height: 100vh;
+    background-color: $colorito;
+}
