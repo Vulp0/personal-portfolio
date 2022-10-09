@@ -5,6 +5,16 @@
     margin: 0;
 }
 
+@mixin perfect-center {
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
 //vars start
 $colorito: #3c3c3d;
 
@@ -14,10 +24,17 @@ $colorito: #3c3c3d;
     width: 100vw;
     height: 24px;
     color: white;
+    @include flex-row;
+    @include perfect-center;
+    justify-content: space-around;
+}
+
+.button-container {
+    @include flex-row;
 }
 
 .hero-container {
-    @include no-margins();
+    @include no-margins;
     height: 100vh;
     background-color: $colorito;
 }
