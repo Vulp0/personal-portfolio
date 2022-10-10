@@ -22,19 +22,41 @@ $colorito: #3c3c3d;
 .navbar {
     background-color: black;
     width: 100vw;
-    height: 24px;
+    height: 4vh;
     color: white;
     @include flex-row;
     @include perfect-center;
-    justify-content: space-around;
+    justify-content: space-between;
+}
+
+.logo {
+    margin-left: 15%;
 }
 
 .button-container {
     @include flex-row;
+    margin-right: 8%;
+
+    a {
+        margin: 0 30px;
+    }
 }
 
 .hero-container {
     @include no-margins;
-    height: 100vh;
-    background-color: $colorito;
+    height: 96vh;
+    background-image: url(../media/animated/background-1.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.hero-text-container {
+    text-align: center;
+    position: relative;
+    top: 45%;
+}
+
+h1, p {
+    @include no-margins;
 }
