@@ -1,5 +1,8 @@
 @use "normalize.scss";
 
+//vars start
+$colorito: #3c3c3d;
+
 //mixins start
 @mixin no-margins {
     margin: 0;
@@ -15,8 +18,10 @@
     flex-direction: row;
 }
 
-//vars start
-$colorito: #3c3c3d;
+//elements
+html {
+    scroll-behavior: smooth;
+}
 
 //classes start
 .navbar {
@@ -39,6 +44,8 @@ $colorito: #3c3c3d;
 
     a {
         margin: 0 30px;
+        color: white;
+        text-decoration: none;
     }
 }
 
@@ -59,4 +66,28 @@ $colorito: #3c3c3d;
 
 h1, p {
     @include no-margins;
+}
+
+.about-container {
+    height: 100vh;
+    background-color: white;
+}
+
+.content-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.content-text-container {
+    background-color: antiquewhite; //for dev purposes, these are placeholders
+
+    h2, p {
+        @include no-margins;
+    }
+}
+
+.content-img {
+    background-color: aquamarine;
 }
