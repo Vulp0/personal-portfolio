@@ -8,6 +8,10 @@ $colorito: #3c3c3d;
     margin: 0;
 }
 
+@mixin horizontal-center {
+    margin: 0 auto;
+}
+
 @mixin perfect-center {
     justify-content: center;
     align-items: center;
@@ -69,8 +73,11 @@ h1, p {
 }
 
 .about-container {
-    height: 100vh;
+    height: 80vh;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .content-container {
@@ -78,16 +85,36 @@ h1, p {
     grid-template-columns: auto auto;
     width: 85%;
     margin: 0 auto;
+    column-gap: 5%;
 }
 
 .content-text-container {
     background-color: antiquewhite; //for dev purposes, these are placeholders
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include horizontal-center;
+    padding: 22px;
+
+    h2 {
+        font-size: 48px;
+    }
+
+    p {
+        font-size: 18px;
+    }
 
     h2, p {
         @include no-margins;
+        background-color:darksalmon;
+        padding: 20px;
     }
 }
 
 .content-img {
     background-color: aquamarine;
+    content: url("../media/img/spirit\ animal.webp");
+    height: auto;
+    width: 100%;
+    @include horizontal-center;
 }
