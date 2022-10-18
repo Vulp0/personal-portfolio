@@ -1,7 +1,15 @@
 @use "normalize.scss";
+//font-family: 'Jua', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+//font-family: 'Inter', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
 
 //vars start
 $colorito: #3c3c3d;
+$mainL: #1B2224;
+$mainD: #141A1B;
+$mainC: #0E4672;
 
 //mixins start
 @mixin no-margins {
@@ -22,14 +30,35 @@ $colorito: #3c3c3d;
     flex-direction: row;
 }
 
+@mixin nav-hover {
+    &:hover {
+        scale: 1.08;
+        transition:0.3s;
+    }
+}
+
+@mixin header-text {
+    font-family: "Jua", sans-serif;
+}
+
+@mixin content-text {
+    font-family: "Inter", sans-serif;
+}
+
 //elements
 html {
     scroll-behavior: smooth;
 }
 
+body {
+    background-color: $mainL;
+}
+
 //classes start
 .navbar {
-    background-color: black;
+    @include content-text;
+    font-size: 22px;
+    background-color: $mainD;
     width: 100vw;
     height: 4vh;
     color: white;
@@ -42,6 +71,7 @@ html {
     margin-left: 15%;
 }
 
+
 .button-container {
     @include flex-row;
     margin-right: 8%;
@@ -50,6 +80,7 @@ html {
         margin: 0 30px;
         color: white;
         text-decoration: none;
+        @include nav-hover;
     }
 }
 
@@ -66,15 +97,25 @@ html {
     text-align: center;
     position: relative;
     top: 45%;
-}
 
-h1, p {
-    @include no-margins;
+    h1, p {
+        @include no-margins;
+    }
+
+    h1 {
+        @include header-text;
+        font-size: 44px;
+    }
+
+    p {
+        @include content-text;
+        font-size: 20px;
+    }
 }
 
 .about-container {
     height: 80vh;
-    background-color: white;
+    // background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -96,18 +137,20 @@ h1, p {
     @include horizontal-center;
     padding: 22px;
 
-    h2 {
-        font-size: 48px;
-    }
-
-    p {
-        font-size: 18px;
-    }
-
     h2, p {
         @include no-margins;
         background-color:darksalmon;
         padding: 20px;
+    }
+
+    h2 {
+        @include header-text;
+        font-size: 48px;
+    }
+
+    p {
+        @include content-text;
+        font-size: 18px;
     }
 }
 
@@ -117,4 +160,9 @@ h1, p {
     height: auto;
     width: 100%;
     @include horizontal-center;
+}
+
+.projects-container {
+    // background-color: whitesmoke;
+    height: 80vh;
 }

@@ -51,8 +51,8 @@ function compileJS(done) {
     console.log(">Compiling and compressing JavaScript");
     src("./src/js/*.js")
         .pipe(concatenate("scripts.js"))
-        .pipe(uglify())
-        .pipe(dest("./build/js"));
+        // .pipe(uglify())
+        .pipe(dest("./build/js")),
     done();
 }
 
